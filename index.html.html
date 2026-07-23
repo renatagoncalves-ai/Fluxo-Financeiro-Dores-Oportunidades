@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo Financeiro - Benefícios & Workplace Solutions | iFood Financial Copilot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ifood: {
+                            50: '#fff1f2',
+                            100: '#ffe1e4',
+                            200: '#fecdd3',
+                            400: '#f43f5e',
+                            500: '#ea1d2c', /* Official iFood Primary Red */
+                            600: '#d91828',
+                            700: '#b71020',
+                            800: '#8f111b',
+                            900: '#5c060e',
+                            950: '#2a0205',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05), 0 2px 6px -2px rgba(0, 0, 0, 0.02);
+        }
+        .glass-card-ifood {
+            background: #fef2f2;
+            backdrop-filter: blur(12px);
+            border: 1px solid #fca5a5;
+            box-shadow: 0 4px 20px -3px rgba(234, 29, 44, 0.08);
+        }
+        .glass-card-amber {
+            background: #fffbeb;
+            backdrop-filter: blur(12px);
+            border: 1px solid #fde68a;
+        }
+        .glass-card-red {
+            background: #fef2f2;
+            backdrop-filter: blur(12px);
+            border: 1px solid #fecaca;
+        }
+        .glass-card-emerald {
+            background: #ecfdf5;
+            backdrop-filter: blur(12px);
+            border: 1px solid #a7f3d0;
+        }
+        .glass-card-purple {
+            background: #faf5ff;
+            backdrop-filter: blur(12px);
+            border: 1px solid #e9d5ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #ea1d2c;
+        }
+        .tab-btn.active {
+            background-color: #ea1d2c;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(234, 29, 44, 0.3);
+        }
+        .ai-tab-btn.active {
+            background: linear-gradient(135deg, #ea1d2c 0%, #9333ea 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 18px rgba(234, 29, 44, 0.35);
+        }
+        .pulse-glow-ifood {
+            animation: pulse-glow-ifood-anim 2.5s infinite alternate;
+        }
+        @keyframes pulse-glow-ifood-anim {
+            0% { box-shadow: 0 0 10px rgba(234, 29, 44, 0.1); }
+            100% { box-shadow: 0 0 25px rgba(234, 29, 44, 0.25); }
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased pb-16 custom-scrollbar bg-slate-50">
+
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-ifood-500 flex items-center justify-center text-white font-black text-xl shadow-md shadow-ifood-500/30">
+                            iF
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-ifood-600 bg-ifood-50 rounded-full border border-ifood-200">
+                                    Diagnóstico & Inovação Financeira
+                                </span>
+                                <span class="text-xs text-slate-500 font-medium">Benefícios & Workplace Solutions</span>
+                            </div>
+                            <h1 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2 mt-0.5">
+                                <span>Fluxo Financeiro & Super Agent Copilot</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Navigation Tabs -->
+                <div class="flex items-center bg-slate-100 p-1.5 rounded-xl border border-slate-200 self-start lg:self-auto">
+                    <button id="btn-tab-diagnostic" onclick="switchMainTab('diagnostic')" class="tab-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition flex items-center gap-2">
+                        <i class="fa-solid fa-chart-diagnostics text-xs"></i>
+                        <span>1. Diagnóstico & Dores Atuais</span>
+                    </button>
+                    <button id="btn-tab-copilot" onclick="switchMainTab('copilot')" class="ai-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition flex items-center gap-2 relative">
+                        <i class="fa-solid fa-wand-magic-sparkles text-purple-600 text-xs"></i>
+                        <span>2. Financial Operations Copilot</span>
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ifood-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-ifood-500"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sub Navigation for Diagnostic Tab -->
+            <div id="subnav-diagnostic" class="mt-3 pt-3 border-t border-slate-200 flex flex-wrap gap-2 text-xs">
+                <a href="#overview" class="px-3 py-1 rounded-md bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 transition font-medium">Visão Geral</a>
+                <a href="#volumes" class="px-3 py-1 rounded-md bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 transition font-medium">Volume Consolidado</a>
+                <a href="#fiscal" class="px-3 py-1 rounded-md bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 transition font-medium">Fluxo Fiscal & Dores</a>
+                <a href="#rateios" class="px-3 py-1 rounded-md bg-ifood-50 text-ifood-700 border border-ifood-200 hover:bg-ifood-100 transition font-semibold">Rateio & Trava SAP</a>
+                <a href="#nao-fiscal" class="px-3 py-1 rounded-md bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 transition font-medium">Não Fiscal</a>
+                <a href="#estrutural" class="px-3 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition font-semibold">Dores Estruturais</a>
+                <a href="#conclusao" class="px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition font-semibold">Conclusão</a>
+            </div>
+
+            <!-- Sub Navigation for Copilot Tab -->
+            <div id="subnav-copilot" class="mt-3 pt-3 border-t border-slate-200 hidden flex flex-wrap gap-2 text-xs">
+                <a href="#copilot-racional" class="px-3 py-1.5 rounded-md bg-ifood-50 text-ifood-700 border border-ifood-200 hover:bg-ifood-100 transition font-bold">Racional Estratégico</a>
+                <a href="#copilot-estrategia" class="px-3 py-1.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition font-bold"><i class="fa-solid fa-bullseye text-indigo-500 mr-1"></i> Estratégia do Agente</a>
+                <a href="#copilot-inventario" class="px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition font-medium"><i class="fa-solid fa-database text-ifood-500 mr-1"></i> O Que O Agente Terá</a>
+                <a href="#copilot-modulos" class="px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition font-medium">Os 7 Módulos</a>
+                <a href="#copilot-ecosystem" class="px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition font-medium">Sistemas Conectados</a>
+                <a href="#copilot-interactive" class="px-3 py-1.5 rounded-md bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition font-bold">Simulador ao Vivo</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-12">
+
+        <!-- ========================================================================= -->
+        <!-- TAB 1: DIAGNÓSTICO ATUAL & DORES MAPEADAS                                 -->
+        <!-- ========================================================================= -->
+        <div id="section-diagnostic" class="space-y-12">
+
+            <section id="overview" class="scroll-mt-28 space-y-6">
+                <div class="glass-card rounded-2xl p-6 md:p-8 border border-slate-200 relative overflow-hidden bg-white">
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-ifood-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-ifood-50 border border-ifood-200 flex items-center justify-center text-ifood-500 font-bold">
+                            <i class="fa-solid fa-chart-pie text-lg"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-black text-slate-900">Visão Geral da Operação Financeira</h2>
+                            <p class="text-xs text-slate-500 font-medium">Mapeamento integrado dos fluxos de pagamentos</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed max-w-5xl">
+                        Nós temos fluxos de pagamentos com o financeiro do iFood para gestão de parceiros estratégicos, envolvendo múltiplos sistemas, diversas instâncias de aprovação e acompanhamento contínuo das integrações financeiras.
+                    </p>
+                </div>
+
+                <!-- Volume Mensal Grid Section -->
+                <div id="volumes" class="scroll-mt-28 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-ifood-500"></i> Mapeamento de Volumetria Mensal da Operação
+                        </h3>
+                        <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-full border border-slate-300 font-medium">Média Consolidada por Área</span>
+                    </div>
+
+                    <!-- Area Breakdown Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                        <!-- Area 1: Benefícios -->
+                        <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                                <div class="flex items-center space-x-2.5">
+                                    <div class="p-2 rounded-lg bg-ifood-50 text-ifood-500 border border-ifood-100">
+                                        <i class="fa-solid fa-gift text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-slate-900 text-base">1. Área de Benefícios</h4>
+                                        <p class="text-xs text-slate-500">Gestão de parceiros, incentivos e convênios</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 text-xs font-bold rounded-full bg-ifood-50 text-ifood-600 border border-ifood-200">
+                                    ~81 movimentações/mês
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-500 block mb-1 font-medium">Fornecedores Fiscais</span>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-2xl font-black text-slate-900">6</span>
+                                        <span class="text-[11px] text-slate-500">parceiros</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-500 block mb-1 font-medium">Notas Fiscais / Mês</span>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-2xl font-black text-ifood-600">47</span>
+                                        <span class="text-[11px] text-slate-500">NFs/mês</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-ifood-50/60 p-3.5 rounded-xl border border-ifood-200 col-span-1 sm:col-span-2">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-ifood-800 font-bold">Notas iFood Benefícios</span>
+                                        <span class="text-xs font-black px-2 py-0.5 rounded bg-ifood-500 text-white shadow-sm">57% das NFs de Benefícios</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-2xl font-black text-ifood-600">27 <span class="text-xs font-normal text-slate-600">/ mês</span></span>
+                                        <span class="text-xs text-ifood-700 font-medium">Maior densidade de NFs & CNPJs por produto</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-500 block mb-1 font-medium">Fornecedores Não Fiscais</span>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-2xl font-black text-slate-900">5</span>
+                                        <span class="text-[11px] text-slate-500">parceiros</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-500 block mb-1 font-medium">Pagamentos Não Fiscais</span>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-2xl font-black text-purple-600">34</span>
+                                        <span class="text-[11px] text-slate-500">mídia/mês</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Area 2: Workplace Solutions -->
+                        <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                                <div class="flex items-center space-x-2.5">
+                                    <div class="p-2 rounded-lg bg-sky-50 text-sky-600 border border-sky-100">
+                                        <i class="fa-solid fa-building-user text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-slate-900 text-base">2. Workplace Solutions</h4>
+                                        <p class="text-xs text-slate-500">Facilities, infraestrutura predial e faturamento</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 text-xs font-bold rounded-full bg-sky-50 text-sky-700 border border-sky-200">
+                                    ~140 movimentações/mês
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 col-span-1 sm:col-span-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-slate-800 font-bold">Faturamento Fiscal</span>
+                                        <span class="text-xs px-2.5 py-0.5 rounded bg-sky-100 text-sky-800 border border-sky-200 font-mono font-semibold">Faixa: 70 a 80 / mês</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-3xl font-black text-sky-600">~75 <span class="text-xs font-normal text-slate-500">NFs/mês (média)</span></span>
+                                        <i class="fa-solid fa-file-invoice text-sky-400/40 text-2xl"></i>
+                                    </div>
+                                    <p class="text-[11px] text-slate-600">Serviços de manutenção, infraestrutura, Facilities e fornecedores de operação contínua.</p>
+                                </div>
+
+                                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 col-span-1 sm:col-span-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-slate-800 font-bold">Faturamento Não Fiscal</span>
+                                        <span class="text-xs px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 border border-purple-200 font-mono font-semibold">Faixa: 60 a 70 / mês</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-3xl font-black text-purple-600">~65 <span class="text-xs font-normal text-slate-500">pagamentos/mês (média)</span></span>
+                                        <i class="fa-solid fa-money-bill-transfer text-purple-400/40 text-2xl"></i>
+                                    </div>
+                                    <p class="text-[11px] text-slate-600">Despesas operacionais, reembolsos diretos, Uber, Vol/Oba e faturamento não fiscal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Consolidated Total Highlight Banner -->
+                    <div class="glass-card-ifood rounded-2xl p-5 border border-ifood-300 flex flex-col md:flex-row items-center justify-between gap-6 pulse-glow-ifood bg-gradient-to-r from-red-50 via-white to-red-50">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-ifood-500 text-white flex items-center justify-center font-black text-xl shrink-0 shadow-md shadow-ifood-500/40">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-ifood-600 font-extrabold">Volume Total Consolidado da Operação</span>
+                                <h4 class="text-lg font-black text-slate-900">Benefícios + Workplace Solutions</h4>
+                                <p class="text-xs text-slate-600">Acompanhamento unificado de processos fiscais e não fiscais</p>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-right shrink-0 bg-white px-6 py-3 rounded-xl border border-ifood-200 shadow-sm">
+                            <span class="text-3xl font-black text-slate-900">~221</span>
+                            <span class="text-xs text-ifood-600 block font-bold">movimentações / mês</span>
+                            <span class="text-[10px] text-slate-500 block font-medium">(~122 fiscais + ~99 não fiscais)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fiscal" class="scroll-mt-28 space-y-6">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-ifood-50 border border-ifood-200 flex items-center justify-center text-ifood-600 font-bold">1</div>
+                    <h2 class="text-xl font-bold text-slate-900">Fluxo Atual: Pagamentos Fiscais</h2>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-ifood-500"></i> Etapas do Processo Fiscal (Benefícios & Workplace)
+                    </h3>
+
+                    <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-200 space-y-6 my-2">
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 01</span>
+                                <h4 class="text-base font-semibold text-slate-900">Necessidade de pagamento identificada</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 02</span>
+                                    <span class="text-xs px-2.5 py-0.5 rounded bg-ifood-50 text-ifood-700 border border-ifood-200 font-mono font-bold">Digital By You (PO's)</span>
+                                </div>
+                                <h4 class="text-base font-semibold text-slate-900 mt-1">Abertura de PO no Digital By You</h4>
+                                <p class="text-xs text-slate-500 mt-1">(Provisão estimada para 6 meses ou pedidos anuais guarda-chuva)</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 03</span>
+                                <h4 class="text-base font-semibold text-slate-900">Aprovação da PO nas esteiras de governança</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 04</span>
+                                <h4 class="text-base font-semibold text-slate-900">Envio do número da PO ao fornecedor parceiro</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 05</span>
+                                <h4 class="text-base font-semibold text-slate-900">Fornecedor emite Nota Fiscal</h4>
+                                <p class="text-xs text-slate-500 mt-1">(Deverá conter obrigatoriamente o número da PO correspondente)</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 06</span>
+                                    <span class="text-xs px-2.5 py-0.5 rounded bg-slate-200 text-slate-800 border border-slate-300 font-medium">Portal de Fornecedores</span>
+                                </div>
+                                <h4 class="text-base font-semibold text-slate-900 mt-1">Fornecedor insere a Nota Fiscal no Portal de Fornecedores</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 03</span>
+                                <h4 class="text-base font-semibold text-slate-900">Aprovação da PO nas esteiras de governança</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 04</span>
+                                <h4 class="text-base font-semibold text-slate-900">Envio do número da PO ao fornecedor parceiro</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 05</span>
+                                <h4 class="text-base font-semibold text-slate-900">Fornecedor emite Nota Fiscal</h4>
+                                <p class="text-xs text-slate-500 mt-1">(Deverá conter obrigatoriamente o número da PO correspondente)</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 06</span>
+                                    <span class="text-xs px-2.5 py-0.5 rounded bg-slate-200 text-slate-800 border border-slate-300 font-medium">Portal de Fornecedores</span>
+                                </div>
+                                <h4 class="text-base font-semibold text-slate-900 mt-1">Fornecedor realiza o faturamento no Portal de Fornecedores</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 07</span>
+                                    <span class="text-xs px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 font-semibold">Portal → SAP</span>
+                                </div>
+                                <h4 class="text-base font-semibold text-slate-900 mt-1">Integração automática entre Portal e SAP</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-ifood-500 shadow-sm"></div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <span class="text-xs text-ifood-600 font-bold uppercase">Etapa 08</span>
+                                <h4 class="text-base font-semibold text-slate-900">Programação do pagamento no contas a pagar</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-amber-500 shadow-sm"></div>
+                            <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                                <span class="text-xs text-amber-700 font-bold uppercase">Etapa 09</span>
+                                <h4 class="text-base font-semibold text-amber-900">Acompanhamento manual do pagamento</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pain Points Grid -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-ifood-500"></i> Principais Dores Operacionais do Fluxo Fiscal
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="glass-card-red rounded-xl p-5">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <span class="w-7 h-7 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-xs shadow-sm">1</span>
+                                <h4 class="font-bold text-slate-900 text-base">Processo Altamente Fragmentado</h4>
+                            </div>
+                            <p class="text-xs text-slate-700 mb-3">Cada etapa do pagamento ocorre em uma plataforma separada, sem barramento unificado:</p>
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                <span class="px-2.5 py-1 text-xs rounded bg-white text-slate-800 border border-slate-300 font-mono font-medium">Digital By You</span>
+                                <span class="px-2.5 py-1 text-xs rounded bg-white text-slate-800 border border-slate-300 font-medium">Portal de Fornecedores</span>
+                                <span class="px-2.5 py-1 text-xs rounded bg-white text-slate-800 border border-slate-300 font-medium">SAP</span>
+                                <span class="px-2.5 py-1 text-xs rounded bg-white text-slate-800 border border-slate-300 font-medium">Buddy</span>
+                                <span class="px-2.5 py-1 text-xs rounded bg-white text-slate-800 border border-slate-300 font-medium">ThoughtSpot</span>
+                            </div>
+                            <p class="text-xs text-ifood-700 font-semibold bg-white p-2.5 rounded border border-red-200">
+                                <i class="fa-solid fa-circle-xmark mr-1 text-ifood-500"></i> Não existe uma visão consolidada ou cockpit único do processo.
+                            </p>
+                        </div>
+
+                        <div class="glass-card-red rounded-xl p-5">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <span class="w-7 h-7 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-xs shadow-sm">2</span>
+                                <h4 class="font-bold text-slate-900 text-base">Falta de Rastreabilidade ("Trabalho de Detetive")</h4>
+                            </div>
+                            <p class="text-xs text-slate-700 mb-3">Para rastrear o status de um pagamento ou descobrir falhas, a equipe precisa consultar manualmente cada sistema:</p>
+                            <ul class="text-xs text-slate-700 space-y-1.5 bg-white p-3 rounded-lg border border-red-200">
+                                <li class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span class="text-slate-600">Saldo e Consumo da PO</span>
+                                    <span class="font-mono text-ifood-600 font-bold">→ ThoughtSpot</span>
+                                </li>
+                                <li class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span class="text-slate-600">Status da Nota Fiscal</span>
+                                    <span class="font-mono text-ifood-600 font-bold">→ Buddy / Laia (novo APP)</span>
+                                </li>
+                                <li class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span class="text-slate-600">Status da Integração / Erros</span>
+                                    <span class="font-mono text-ifood-600 font-bold">→ SAP</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-slate-600">Lançamento do Fornecedor</span>
+                                    <span class="font-mono text-ifood-600 font-bold">→ Portal de Fornecedores</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card-red rounded-xl p-5">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <span class="w-7 h-7 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-xs shadow-sm">3</span>
+                                <h4 class="font-bold text-slate-900 text-base">Integrações Inconsistentes</h4>
+                            </div>
+                            <p class="text-xs text-slate-700 mb-2">A nota fiscal é enviada respeitando o padrão estabelecido. Porém:</p>
+                            <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside mb-3">
+                                <li>Algumas notas integram sem erros;</li>
+                                <li>Outras falham silenciosamente na integração;</li>
+                                <li>Outras alteram campos críticos (como prazo contratual);</li>
+                            </ul>
+                            <p class="text-xs text-ifood-700 font-semibold bg-white p-2 rounded border border-red-200">
+                                Ausência completa de transparência sobre a causa raiz das falhas.
+                            </p>
+                        </div>
+
+                        <div class="glass-card-red rounded-xl p-5">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <span class="w-7 h-7 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-xs shadow-sm">4</span>
+                                <h4 class="font-bold text-slate-900 text-base">Multiplicidade de CNPJs & Produtos</h4>
+                            </div>
+                            <p class="text-xs text-slate-700 mb-2">
+                                O iFood Benefícios representa <strong class="text-ifood-600">57% do volume fiscal de Benefícios</strong>, com fracionamento por produto e CNPJ.
+                            </p>
+                            <div class="bg-white p-3 rounded-lg border border-red-200 text-xs text-slate-700 space-y-1">
+                                <span class="text-amber-700 font-bold text-[11px] uppercase tracking-wider block">Exemplo do Discovery:</span>
+                                <div class="flex items-center space-x-2 font-mono text-[11px] text-slate-800 flex-wrap">
+                                    <span>Mobilidade</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span>6 CNPJs</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span>3 NFs/CNPJ</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span class="text-ifood-600 font-bold">18 notas em 1 única frente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Condition Overrides and Risk of Benefit Cancellation Callout -->
+                    <div class="glass-card-red rounded-xl p-5 border border-red-300 space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-7 h-7 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-xs shadow-sm">5</span>
+                            <h4 class="font-bold text-slate-900 text-base">Alteração Automática de Prazos & Risco Crítico de Negócio</h4>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <span class="text-xs text-slate-500 block">Prazo Contratado</span>
+                                <span class="text-xl font-bold text-emerald-600">30 dias</span>
+                            </div>
+                            <div class="flex items-center justify-center text-slate-400">
+                                <i class="fa-solid fa-arrow-right text-xl"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-red-200 text-center">
+                                <span class="text-xs text-slate-500 block">Após Integração no SAP</span>
+                                <span class="text-xl font-bold text-ifood-600">60 dias (Automático)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl border border-red-200 text-xs space-y-2">
+                            <span class="text-ifood-600 font-bold uppercase tracking-wider block">🚨 Consequência Grave Mapeada no Discovery:</span>
+                            <p class="text-slate-800 leading-relaxed">
+                                A postergação involuntária de prazos e o atraso de liquidação acarretam o <strong>risco direto de suspensão e corte de benefícios essenciais dos colaboradores</strong> (como planos de saúde, VVR e convênios), gerando desgaste crítico com parceiros estratégicos (ex: Bradesco, Flash, Gympass).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rateios" class="scroll-mt-28 space-y-6">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-ifood-50 border border-ifood-200 flex items-center justify-center text-ifood-600 font-bold">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900">Complexidade de Rateio & Limitações do SAP</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Pain Point: Trava dos 99 CCs -->
+                    <div class="glass-card-amber rounded-2xl p-5 border border-amber-300 space-y-3">
+                        <div class="flex items-center space-x-2 text-amber-800 font-bold text-sm">
+                            <i class="fa-solid fa-triangle-exclamation text-base text-amber-600"></i>
+                            <span>Trava dos 99 CCs no SAP</span>
+                        </div>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            O SAP impõe um limite rígido de <strong>99 centros de custo por lançamento</strong>. Quando a despesa de rateio (comum em viagens, Staff Cost ou folha) excede 99 CCs, o lançamento é rejeitado.
+                        </p>
+                        <div class="bg-white p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900">
+                            <strong>Impacto:</strong> A equipe é forçada a fatiar manualmente uma única nota/solicitação em dezenas de linhas adicionais.
+                        </div>
+                    </div>
+
+                    <!-- Pain Point: Pedágio de R$ 1,00 -->
+                    <div class="glass-card-amber rounded-2xl p-5 border border-amber-300 space-y-3">
+                        <div class="flex items-center space-x-2 text-amber-800 font-bold text-sm">
+                            <i class="fa-solid fa-coins text-base text-amber-600"></i>
+                            <span>O Workaround do "Pedágio de R$ 1,00"</span>
+                        </div>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            Para evitar recusas ou desvios de aprovação quando há erro na hierarquia do centro de custo, as equipes inserem <strong>R$ 1,00 simbólico no primeiro CC da lista</strong>.
+                        </p>
+                        <div class="bg-white p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900">
+                            <strong>Impacto:</strong> Solução improvisada ("puxadinho") para garantir que o fluxo inicie pela área correta.
+                        </div>
+                    </div>
+
+                    <!-- Pain Point: Impasse das POs Guarda-Chuva -->
+                    <div class="glass-card-amber rounded-2xl p-5 border border-amber-300 space-y-3">
+                        <div class="flex items-center space-x-2 text-amber-800 font-bold text-sm">
+                            <i class="fa-solid fa-umbrella text-base text-amber-600"></i>
+                            <span>Impasse: PO Guarda-Chuva vs. Mensal</span>
+                        </div>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            Negócio prefere <strong>PO's guarda-chuva anuais</strong> para diminuir trabalho burocrático. A Contabilidade prefere <strong>PO's mensais</strong> para garantir fechamentos perfeitos.
+                        </p>
+                        <div class="bg-white p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900">
+                            <strong>Impacto:</strong> Conflito recorrente sem diretriz única estabelecida entre as áreas.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discovery Extra Insights: Support & Vendor Portal Overhead -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                        <div class="flex items-center space-x-2 text-ifood-600 font-bold text-sm">
+                            <i class="fa-solid fa-headset"></i>
+                            <span>Canal "Ajuda P2P" & Suporte Ineficiente</span>
+                        </div>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            O canal de suporte corporativo "Ajuda P2P" apresenta SLA insatisfatório e respostas genéricas para chamados urgentes de retenção ou erro de nota fiscal.
+                        </p>
+                        <span class="text-[11px] font-semibold text-slate-600 block bg-slate-50 p-2 rounded border border-slate-200">
+                            Resultado: As áreas operacionais ficam desamparadas quando a integração falha na véspera do vencimento.
+                        </span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                        <div class="flex items-center space-x-2 text-purple-600 font-bold text-sm">
+                            <i class="fa-solid fa-user-group text-base"></i>
+                            <span>Sobrecarga e Função de "Suporte ao Fornecedor"</span>
+                        </div>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            A migração para o Portal de Fornecedores não reduziu o trabalho manual: as equipes do iFood viraram "suporte de TI" dos fornecedores, ensinando-os a subir notas no portal.
+                        </p>
+                        <span class="text-[11px] font-semibold text-slate-600 block bg-slate-50 p-2 rounded border border-slate-200">
+                            Resultado: Carga de trabalho duplicada sem garantia de que o faturamento irá integrar.
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="nao-fiscal" class="scroll-mt-28 space-y-6">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 font-bold">2</div>
+                    <h2 class="text-xl font-bold text-slate-900">Fluxo Atual: Não Fiscal</h2>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200"><span class="text-[10px] font-bold text-purple-600 uppercase">Passo 01</span><h4 class="text-xs font-bold text-slate-900 mt-2">Parceiro envia faturamento</h4></div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200"><span class="text-[10px] font-bold text-purple-600 uppercase">Passo 02</span><h4 class="text-xs font-bold text-slate-900 mt-2">Operação confere faturamento</h4></div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200"><span class="text-[10px] font-bold text-purple-600 uppercase">Passo 03</span><h4 class="text-xs font-bold text-slate-900 mt-2">Lançamento no Digital By You</h4></div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200"><span class="text-[10px] font-bold text-purple-600 uppercase">Passo 04</span><h4 class="text-xs font-bold text-slate-900 mt-2">Financeiro agenda pagamento</h4></div>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-200"><span class="text-[10px] font-bold text-purple-700 uppercase">Passo 05</span><h4 class="text-xs font-bold text-purple-900 mt-2">Pagamento realizado</h4></div>
+                    </div>
+                </div>
+
+                <div class="glass-card-amber rounded-2xl p-6 border border-amber-300 space-y-4">
+                    <h3 class="text-base font-bold text-slate-900">Característica do Fluxo Não Fiscal & Janela de Pagamento</h3>
+                    <p class="text-xs sm:text-sm text-slate-700">
+                        O fluxo não fiscal é mais direto e possui pouca dor operacional em comparação ao fluxo fiscal. O ponto de atenção é que ele compartilha a mesma limitação do ciclo de processamento financeiro corporativo do iFood (executado às quintas-feiras), que também se aplica aos fluxos fiscais.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs pt-2">
+                        <div class="bg-white p-3 rounded-lg border border-amber-200"><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> Baixa complexidade operacional direta</div>
+                        <div class="bg-white p-3 rounded-lg border border-amber-200"><i class="fa-solid fa-calendar-days text-amber-600 mr-1.5"></i> Janela semanal de liquidação (quintas-feiras)</div>
+                        <div class="bg-white p-3 rounded-lg border border-amber-200"><i class="fa-solid fa-arrows-split-up-and-left text-slate-600 mr-1.5"></i> Regra de calendário compartilhada com o fiscal</div>
+                    </div>
+                </div>
+
+                <!-- Workaround HCM / Uber / Vol -->
+                <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-purple-700 uppercase tracking-wider font-mono"><i class="fa-solid fa-users-gear mr-1"></i> Processo Manual de HCM & Reclassificação (Workplace / People)</span>
+                        <span class="text-[10px] bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded border border-purple-200 font-bold">1h30 a 2h por ciclo</span>
+                    </div>
+                    <p class="text-xs text-slate-700 leading-relaxed">
+                        No cadastramento da Vol e Uber, o time precisa cruzar manualmente a tabela de HCM com a lista de colaboradores desligados para realizar a reclassificação de custos.
+                    </p>
+                    <div class="p-3 rounded-xl bg-purple-50 border border-purple-200 text-xs text-purple-900 flex items-center justify-between">
+                        <span><strong>Oportunidade de Automação:</strong> Um robô/agente de cruzamento de dados reduz este tempo de 2 horas para 10 a 15 minutos.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="estrutural" class="scroll-mt-28 space-y-6">
+                <div class="glass-card-amber rounded-2xl p-8 border-2 border-amber-400 text-center relative overflow-hidden bg-amber-50/80">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-800 bg-amber-200/80 px-3 py-1 rounded-full border border-amber-300 inline-block mb-3">Conclusão do Diagnóstico</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-slate-900">O problema não é operacional. <span class="text-ifood-600">O problema é estrutural.</span></h3>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase mb-4">Os 8 fatores estruturais diagnosticados:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-eye-slash text-amber-600 text-sm"></i> Ausência de visão ponta a ponta do processo</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-hand-pointer text-amber-600 text-sm"></i> Excesso de consultas e cruzamentos manuais</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-plug-circle-xmark text-amber-600 text-sm"></i> Múltiplos sistemas que não se comunicam</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-chart-line text-amber-600 text-sm"></i> Ausência de indicadores e alertas em tempo real</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-triangle-exclamation text-amber-600 text-sm"></i> Integrações inconsistentes entre Portal e SAP</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-bullhorn text-amber-600 text-sm"></i> Mudanças de processo sem comunicação prévia</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-file-circle-xmark text-amber-600 text-sm"></i> Ausência de documentação operacional acessível</div>
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3"><i class="fa-solid fa-user-gear text-amber-600 text-sm"></i> Operação obrigada a atuar como "detetive contábil"</div>
+                    </div>
+                </div>
+
+                <!-- Case Study Evidence -->
+                <div class="glass-card rounded-2xl p-6 border border-ifood-200 bg-white space-y-4 shadow-sm">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2.5 py-0.5 rounded bg-ifood-50 text-ifood-700 text-xs font-bold uppercase border border-ifood-200">Evidência Real Mapeada</span>
+                        <h3 class="text-base font-bold text-slate-900">Exemplo: O Processo de Provisionamento de Benefícios</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        Durante tratativa de atraso de faturamento, Financeiro/Contábil informou que a operação deveria realizar provisionamento no <strong class="text-slate-900">Digital By You</strong>, alegando que o fluxo "sempre existiu". No entanto, a equipe nunca executou o procedimento porque <strong>não existia sequer classificação contábil cadastrada para a área de Benefícios dentro do sistema Digital By You</strong>.
+                    </p>
+                    <div class="p-3 rounded-xl bg-ifood-50 border border-ifood-200 text-xs text-ifood-900 font-medium">
+                        <strong>Conclusão do Caso:</strong> Existem regras consideradas "óbvias" pelas áreas especialistas que nunca foram devidamente comunicadas, configuradas no sistema ou operacionalizadas para quem executa.
+                    </div>
+                </div>
+            </section>
+
+            <section id="conclusao" class="scroll-mt-28 space-y-6">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold">✓</div>
+                    <h2 class="text-xl font-bold text-slate-900">Conclusão e Oportunidades de Melhoria</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-700">
+                    A operação administra aproximadamente <strong>221 movimentações financeiras por mês</strong> (Benefícios + Workplace Solutions). O principal gargalo não é o volume de documentos, mas a arquitetura fragmentada do processo e a falta de visibilidade proativa.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="glass-card-emerald p-4 rounded-xl"><h4 class="font-bold text-slate-900 text-xs mb-1">Centralização Unificada</h4><p class="text-[11px] text-slate-600">Cockpit único para consulta de todos os sistemas</p></div>
+                    <div class="glass-card-emerald p-4 rounded-xl"><h4 class="font-bold text-slate-900 text-xs mb-1">Padronização de Rateios</h4><p class="text-[11px] text-slate-600">Automação de regras e contorno da trava dos 99 CCs</p></div>
+                    <div class="glass-card-emerald p-4 rounded-xl"><h4 class="font-bold text-slate-900 text-xs mb-1">Transparência nas Integrações</h4><p class="text-[11px] text-slate-600">Diagnóstico imediato de erros Portal-SAP</p></div>
+                    <div class="glass-card-emerald p-4 rounded-xl"><h4 class="font-bold text-slate-900 text-xs mb-1">Base Viva de Conhecimento</h4><p class="text-[11px] text-slate-600">Manual RAG com SOPs, centros de custo e regras</p></div>
+                    <div class="glass-card-emerald p-4 rounded-xl"><h4 class="font-bold text-slate-900 text-xs mb-1">Comunicação Estruturada</h4><p class="text-[11px] text-slate-600">Conexão fluida entre Financeiro, Contábil e Negócios</p></div>
+                    <div class="glass-card-emerald p-4 rounded-xl"><h4 class="font-bold text-slate-900 text-xs mb-1">Monitoramento Preventivo</h4><p class="text-[11px] text-slate-600">Alertas automáticos de risco e POs prestes a zerar</p></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: AGENTE FINANCIAL OPERATIONS COPILOT (PROPOSTA & ESTRATÉGIA)       -->
+        <!-- ========================================================================= -->
+        <div id="section-copilot" class="hidden space-y-12">
+
+            <section id="copilot-racional" class="scroll-mt-28 space-y-6">
+                <div class="glass-card-ifood rounded-3xl p-6 sm:p-8 border border-ifood-300 relative overflow-hidden pulse-glow-ifood bg-gradient-to-r from-red-50 via-white to-purple-50">
+                    <div class="absolute -right-16 -top-16 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
+                        <div class="space-y-3 max-w-3xl">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-ifood-700 bg-ifood-100 rounded-full border border-ifood-200">
+                                    Proposta Estratégica Super Agent
+                                </span>
+                                <span class="text-xs text-purple-700 font-semibold">Transformação Digital iFood</span>
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                                Não um chatbot passivo. Um <span class="bg-gradient-to-r from-ifood-600 via-rose-600 to-purple-600 bg-clip-text text-transparent">Financial Operations Copilot</span>.
+                            </h2>
+                            <p class="text-xs sm:text-base text-slate-700 leading-relaxed">
+                                O problema atual não é a falta de dados, mas o fato de eles estarem espalhados em 5 sistemas sem previsibilidade. O agente atua como o <strong>cérebro operacional proativo</strong> das frentes de Benefícios e Workplace Solutions: em vez de gastar tempo descobrindo o que quebrou, a equipe passa a gastar tempo tomando decisões estratégicas.
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-ifood-200 text-center shrink-0 w-full lg:w-auto shadow-sm">
+                            <span class="text-xs uppercase text-slate-500 tracking-wider block font-mono font-semibold">Mudança de Paradigma</span>
+                            <div class="flex items-center justify-center gap-3 mt-2 text-sm font-bold">
+                                <span class="text-ifood-600 line-through">Reativo (Detetive)</span>
+                                <i class="fa-solid fa-arrow-right text-purple-600"></i>
+                                <span class="text-emerald-600 text-lg">Preditivo (Gestor)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="copilot-estrategia" class="scroll-mt-28 space-y-6">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-ifood-50 border border-ifood-200 flex items-center justify-center text-ifood-600 text-lg">
+                        <i class="fa-solid fa-chess-knight"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-900">A Estratégia do Agente</h2>
+                        <p class="text-xs text-slate-500 font-medium">Objetivos transformacionais, matriz de comparação e pilares de atuação</p>
+                    </div>
+                </div>
+
+                <!-- Strategic Pillar Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="glass-card rounded-xl p-5 border border-slate-200 bg-white space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-ifood-50 flex items-center justify-center text-ifood-600 text-sm font-bold mb-2">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-base">Visão Ponta a Ponta Instantânea</h3>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            Consolidar os logs de 5 sistemas isolados (Digital By You, SAP, Portal de Fornecedores, Buddy e ThoughtSpot) em um barramento único e legível.
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-5 border border-slate-200 bg-white space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600 text-sm font-bold mb-2">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-base">Atuação Preventiva (Zero Incêndios)</h3>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            Mudar o foco de "descobrir por que o pagamento atrasou" para "receber um alerta 18 dias antes do saldo da PO acabar ou do formulário de risco vencer".
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-5 border border-slate-200 bg-white space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 text-sm font-bold mb-2">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-base">Autonomia Operacional & Governança</h3>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            Transformar conhecimento tácito em uma Base Viva (RAG), garantindo que regras de rateio, travamento de CCs e provisionamento sejam autoexplicativos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strategic Transformation Matrix -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4">
+                    <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-arrows-rotate text-purple-600"></i> Matriz de Transformação Estratégica: Antes vs. Com Copilot
+                    </h3>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left text-slate-700 border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 border-b border-slate-200 text-slate-600 uppercase font-mono font-bold">
+                                    <th class="p-3">Dimensão</th>
+                                    <th class="p-3 text-ifood-600"><i class="fa-solid fa-xmark mr-1"></i> Modelo Atual (Reativo)</th>
+                                    <th class="p-3 text-emerald-700"><i class="fa-solid fa-check mr-1"></i> Com o Copilot (Preditivo)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold text-slate-900">Navegação de Sistemas</td>
+                                    <td class="p-3 text-slate-600">Navegação manual em 5 sistemas distintos (SAP, Buddy, ThoughtSpot, Portal, Digital By You).</td>
+                                    <td class="p-3 text-emerald-800 font-semibold">Interface centralizada com resposta consolidada em menos de 10 segundos.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold text-slate-900">Rateios & Trava do SAP</td>
+                                    <td class="p-3 text-slate-600">Fatiamento manual devido ao limite de 99 CCs e gambiarras ("Pedágio de R$ 1,00").</td>
+                                    <td class="p-3 text-emerald-800 font-semibold">Cálculo de rateio automatizado via folha/HCM com quebra automática de lotes de CC.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold text-slate-900">Detecção de Falhas</td>
+                                    <td class="p-3 text-slate-600">Descobre após o atraso, quando o fornecedor cobra a operação ou corta o serviço.</td>
+                                    <td class="p-3 text-emerald-800 font-semibold">Monitoramento diário que alerta semanas antes do vencimento ou estourar a PO.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold text-slate-900">Diagnóstico de Integração</td>
+                                    <td class="p-3 text-slate-600">Caixa-preta (algumas NFs integram, outras falham sem motivo visível).</td>
+                                    <td class="p-3 text-emerald-800 font-semibold">Traduz erros de integração Portal-SAP em causa raiz clara e ação imediata.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold text-slate-900">Conhecimento Operacional</td>
+                                    <td class="p-3 text-slate-600">Dependência de memória ("sempre foi assim"), sem documentação de fluxos como Provisionamento.</td>
+                                    <td class="p-3 text-emerald-800 font-semibold">Base RAG pesquisável em linguagem natural com tutoriais, CCs e contatos de suporte.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="copilot-inventario" class="scroll-mt-28 space-y-6">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-ifood-50 border border-ifood-200 flex items-center justify-center text-ifood-600 text-lg">
+                        <i class="fa-solid fa-box-archive"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-900">O Que O Agente Terá (Inventário de Dados)</h2>
+                        <p class="text-xs text-slate-500 font-medium">Mapeamento estruturado das bases de dados, regras e entidades integradas</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- Entity 1: Fornecedor -->
+                    <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <span class="text-xs font-bold font-mono text-ifood-600 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-building"></i> Entidade 01: Fornecedores
+                            </span>
+                            <span class="px-2 py-0.5 rounded bg-ifood-50 text-ifood-700 border border-ifood-200 text-[10px] font-bold">Cadastros & Governance</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-[11px]">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Condição Contratada</span>
+                                <strong class="text-slate-800">Prazo de Pagamento (ex: 30d)</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Documento Legal</span>
+                                <strong class="text-slate-800">Base de Contratos Vigentes</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">CNPJs Mapeados</span>
+                                <strong class="text-slate-800">Múltiplos CNPJs por Produto</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Responsável</span>
+                                <strong class="text-indigo-700">Dono da Conta (People/Ops)</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200 col-span-2">
+                                <span class="text-slate-500 block font-mono">Formulário de Risco & ERP</span>
+                                <strong class="text-amber-800">Status de Validade + Vencimento + Trava Cadastral no SAP</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entity 2: PO -->
+                    <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <span class="text-xs font-bold font-mono text-purple-600 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-file-invoice-dollar"></i> Entidade 02: Pedidos de Compra (POs)
+                            </span>
+                            <span class="px-2 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-bold">Consumo & Previsão</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-[11px]">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Saldo Restante</span>
+                                <strong class="text-emerald-700">Valor em R$ Disponível</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Taxa de Consumo</span>
+                                <strong class="text-slate-800">Média Mensal de Gasto</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Burn Rate (Previsão)</span>
+                                <strong class="text-amber-800">Dias Estimados para Zerar Saldo</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Tipo de PO</span>
+                                <strong class="text-slate-800">Guarda-Chuva Anual vs Mensal</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entity 3: Rateios & HCM -->
+                    <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <span class="text-xs font-bold font-mono text-indigo-600 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-sitemap"></i> Entidade 03: Rateios, HCM & Headcount
+                            </span>
+                            <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200 text-[10px] font-bold">Automação de Rateio</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-[11px]">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Hierarquia de CCs</span>
+                                <strong class="text-slate-800">Centros de Custo Ativos/Inativos</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Trava SAP (99 CCs)</span>
+                                <strong class="text-indigo-700">Regra de Fatiamento Lógico</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200 col-span-2">
+                                <span class="text-slate-500 block font-mono">Bases de Staffing & HCM</span>
+                                <strong class="text-slate-800">Lista de Colaboradores + Tabela de Desligados (Uber / Vol / Staff Coaching)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entity 4: Base de Conhecimento -->
+                    <div class="glass-card rounded-2xl p-5 border border-slate-200 bg-white space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <span class="text-xs font-bold font-mono text-emerald-600 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Entidade 04: Base de Conhecimento RAG
+                            </span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold">Manual Vivo SOP</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-[11px]">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Classificação Contábil</span>
+                                <strong class="text-slate-800">De-Para por Produto e Serviços</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <span class="text-slate-500 block font-mono">Regras de Provisionamento</span>
+                                <strong class="text-slate-800">Guia de Entrada no Digital By You</strong>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200 col-span-2">
+                                <span class="text-slate-500 block font-mono">Manuais & Resolução de Erros</span>
+                                <strong class="text-emerald-700">Passo a passo para Solução de Erros no SAP/Portal, Contatos e Políticas Internas</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="copilot-modulos" class="scroll-mt-28 space-y-8">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 text-lg">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-900">Arquitetura do Agente em 7 Módulos</h2>
+                        <p class="text-xs text-slate-500 font-medium">Estrutura completa do Financial Operations Copilot</p>
+                    </div>
+                </div>
+
+                <!-- Module 1 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4 hover:border-ifood-300 transition">
+                    <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-sm shadow-sm">1</span>
+                            <h3 class="text-base font-bold text-slate-900">Central de Pagamentos (Dashboard Consolidado)</h3>
+                        </div>
+                        <span class="text-xs text-ifood-700 bg-ifood-50 px-2.5 py-1 rounded-md border border-ifood-200 font-bold">Resposta em &lt; 10s</span>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase text-slate-600 font-mono font-semibold">Consolidado Mensal da Operação (221 Movimentações)</span>
+                            <span class="text-xs text-emerald-700 font-mono font-bold"><i class="fa-solid fa-circle text-[8px] animate-pulse mr-1 text-emerald-500"></i> MONITORANDO AMBAS AS FRENTES</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm"><span class="text-2xl font-black text-slate-900">221</span><span class="text-[11px] text-slate-500 block">Total Mês</span></div>
+                            <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200"><span class="text-2xl font-black text-emerald-700">165</span><span class="text-[11px] text-emerald-800 block font-semibold">🟢 Pagos</span></div>
+                            <div class="bg-amber-50 p-3 rounded-lg border border-amber-200"><span class="text-2xl font-black text-amber-700">38</span><span class="text-[11px] text-amber-800 block font-semibold">🟡 Aguardando</span></div>
+                            <div class="bg-orange-50 p-3 rounded-lg border border-orange-200"><span class="text-2xl font-black text-orange-700">12</span><span class="text-[11px] text-orange-800 block font-semibold">🟠 Com Risco</span></div>
+                            <div class="bg-red-50 p-3 rounded-lg border border-red-200"><span class="text-2xl font-black text-ifood-600">6</span><span class="text-[11px] text-ifood-800 block font-semibold">🔴 Atrasados</span></div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 flex justify-between items-center shadow-sm">
+                                <span><strong>Benefícios:</strong> ~81 movimentações</span>
+                                <span class="text-slate-500">47 Fiscais / 34 Não Fiscais</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 flex justify-between items-center shadow-sm">
+                                <span><strong>Workplace Solutions:</strong> ~140 movimentações</span>
+                                <span class="text-slate-500">~75 Fiscais / ~65 Não Fiscais</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4 hover:border-ifood-300 transition">
+                    <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-ifood-500 text-white font-bold flex items-center justify-center text-sm shadow-sm">2</span>
+                            <h3 class="text-base font-bold text-slate-900">Timeline Rastreável por Pagamento</h3>
+                        </div>
+                        <span class="text-xs text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200 font-bold">Visão Única Sem Abrir 5 Sistemas</span>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3">
+                        <div class="flex justify-between items-center border-b border-slate-200 pb-2 text-xs">
+                            <span class="font-mono text-ifood-600 font-bold">NF #10928 - Workplace / Manutenção Predial</span>
+                            <span class="text-slate-600 font-semibold">PO #882193</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-6 gap-2 text-center text-xs">
+                            <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold"><i class="fa-solid fa-check text-xs block mb-1 text-emerald-600"></i> PO Criada</div>
+                            <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold"><i class="fa-solid fa-check text-xs block mb-1 text-emerald-600"></i> PO Aprovada</div>
+                            <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold"><i class="fa-solid fa-check text-xs block mb-1 text-emerald-600"></i> NF Emitida</div>
+                            <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold"><i class="fa-solid fa-check text-xs block mb-1 text-emerald-600"></i> Portal</div>
+                            <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold"><i class="fa-solid fa-check text-xs block mb-1 text-emerald-600"></i> SAP</div>
+                            <div class="p-2 rounded bg-ifood-50 border border-ifood-200 text-ifood-800 font-bold"><i class="fa-solid fa-clock text-xs block mb-1 text-ifood-600"></i> Agendado 04/08</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4 hover:border-amber-300 transition">
+                    <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-amber-500 text-white font-bold flex items-center justify-center text-sm shadow-sm">3</span>
+                            <h3 class="text-base font-bold text-slate-900">Monitor Proativo de Riscos</h3>
+                        </div>
+                        <span class="text-xs text-amber-800 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-bold">Alertas Antecipados</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                        <div class="bg-amber-50/70 p-3.5 rounded-xl border border-amber-200 space-y-2">
+                            <div class="flex items-center justify-between text-amber-900 font-bold">
+                                <span>Fornecedor Flash</span>
+                                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+                            </div>
+                            <p class="text-slate-700">⚠️ Formulário de risco vence em <strong>18 dias</strong>.</p>
+                            <span class="text-[10px] text-amber-800 block font-semibold">Ação: Notificação enviada para renovação.</span>
+                        </div>
+
+                        <div class="bg-red-50/70 p-3.5 rounded-xl border border-red-200 space-y-2">
+                            <div class="flex items-center justify-between text-ifood-700 font-bold">
+                                <span>Parceiro Plano de Saúde</span>
+                                <i class="fa-solid fa-ban text-ifood-500"></i>
+                            </div>
+                            <p class="text-slate-700">⚠️ Divergência de prazo no SAP (60d em vez de 30d).</p>
+                            <span class="text-[10px] text-ifood-700 block font-bold">Ação: Risco imediato de suspensão de benefício!</span>
+                        </div>
+
+                        <div class="bg-sky-50/70 p-3.5 rounded-xl border border-sky-200 space-y-2">
+                            <div class="flex items-center justify-between text-sky-900 font-bold">
+                                <span>Saldo PO Workplace</span>
+                                <i class="fa-solid fa-chart-line-down text-sky-600"></i>
+                            </div>
+                            <p class="text-slate-700">PO Restante: <strong>R$ 18.000</strong><br>Consumo médio: R$ 65.000/mês</p>
+                            <span class="text-[10px] text-sky-800 block font-bold">Previsão de término em: 8 dias.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modules 4 to 7 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-ifood-500"></i> Módulos Especializados adicionais
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <span class="text-ifood-600 font-bold block mb-1">Módulo 4: Diagnóstico de Integração</span>
+                            <p class="text-slate-600">Identificação clara da causa raiz dos erros entre Portal e SAP com instrução de correção imediata.</p>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <span class="text-purple-600 font-bold block mb-1">Módulo 5: Assistente Conversacional</span>
+                            <p class="text-slate-600">Interface em linguagem natural no Slack/Web para consultas de saldo de PO, prazo e status.</p>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <span class="text-indigo-600 font-bold block mb-1">Módulo 6: Inteligência Operacional</span>
+                            <p class="text-slate-600">Cruzamento automatizado de HCM para Uber/Vol e otimização dos rateios do SAP (contornando a trava dos 99 CCs).</p>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <span class="text-emerald-600 font-bold block mb-1">Módulo 7: Base Viva de Conhecimento</span>
+                            <p class="text-slate-600">SOPs e tutoriais RAG para Provisionamento no Digital By You, tabela de CCs e direcionamento de suporte.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="copilot-ecosystem" class="scroll-mt-28 space-y-6">
+                <div class="glass-card rounded-2xl p-6 border border-slate-200 bg-white space-y-4">
+                    <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-network-wired text-ifood-500"></i> Ecossistema de Sistemas Conectados ao Agente
+                    </h3>
+                    <p class="text-xs text-slate-500">O Copilot consome e cruza informações de forma unificada das seguintes pontas:</p>
+
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1.5 rounded-lg bg-ifood-50 text-ifood-800 border border-ifood-200 font-mono font-bold">Digital By You</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-ifood-50 text-ifood-800 border border-ifood-200 font-bold">SAP</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-ifood-50 text-ifood-800 border border-ifood-200 font-bold">Portal de Fornecedores</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-ifood-50 text-ifood-800 border border-ifood-200 font-bold">Buddy</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-ifood-50 text-ifood-800 border border-ifood-200 font-bold">ThoughtSpot</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 font-medium">Tabela de HCM / Staffing</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 font-medium">Base de Contratos</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 font-medium">Formulários de Risco</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 font-medium">Centros de Custo & Plano de Contas</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 font-bold"><i class="fa-brands fa-slack mr-1 text-purple-600"></i> Slack (Notificações)</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="copilot-interactive" class="scroll-mt-28 space-y-6">
+                <div class="glass-card-ifood rounded-3xl p-6 sm:p-8 border border-ifood-300 space-y-6 bg-white shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs uppercase text-ifood-600 font-mono tracking-wider font-bold">Demonstração Interativa</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Simulador do Financial Operations Copilot</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-ifood-50 text-ifood-700 border border-ifood-200 text-xs font-bold">
+                            Ambiente de Teste
+                        </span>
+                    </div>
+
+                    <p class="text-xs text-slate-600">Escolha uma das perguntas frequentes baseadas no Discovery para testar a resposta inteligente do agente:</p>
+
+                    <!-- Prompt Suggestion Chips -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="askCopilot('po')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-ifood-50 text-xs text-slate-800 hover:text-ifood-700 border border-slate-200 transition font-medium">
+                            💬 "Quanto ainda tenho de saldo da PO do Flash?"
+                        </button>
+                        <button onclick="askCopilot('workplace')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-ifood-50 text-xs text-slate-800 hover:text-ifood-700 border border-slate-200 transition font-medium">
+                            💬 "Qual a média de notas fiscais de Workplace Solutions?"
+                        </button>
+                        <button onclick="askCopilot('rateio')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-ifood-50 text-xs text-slate-800 hover:text-ifood-700 border border-slate-200 transition font-medium">
+                            💬 "Como contornar a trava dos 99 centros de custo no SAP?"
+                        </button>
+                        <button onclick="askCopilot('provisionamento')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-ifood-50 text-xs text-slate-800 hover:text-ifood-700 border border-slate-200 transition font-medium">
+                            💬 "Como faço um provisionamento de Benefícios no Digital By You?"
+                        </button>
+                    </div>
+
+                    <!-- Interactive Chat Output Box -->
+                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-3 min-h-[220px] flex flex-col justify-between">
+                        <div id="chat-messages" class="space-y-3 font-sans text-xs">
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-slate-700 shadow-sm">
+                                <span class="font-bold text-ifood-600 block mb-1">🤖 Financial Operations Copilot:</span>
+                                Olá! Sou seu assistente de operações financeiras iFood (Benefícios & Workplace Solutions). Clique em uma das dúvidas acima ou digite sua pergunta.
+                            </div>
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-200 flex gap-2">
+                            <input type="text" id="chat-input" placeholder="Pergunte sobre saldos, NFs, rateios ou regras de provisionamento..." class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-ifood-500 shadow-sm" onkeypress="if(event.key==='Enter') sendCustomQuestion()">
+                            <button onclick="sendCustomQuestion()" class="px-4 py-2 bg-ifood-500 hover:bg-ifood-600 text-white rounded-xl text-xs font-bold transition shadow-md shadow-ifood-500/20">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="mt-16 border-t border-slate-200 pt-8 text-center text-xs text-slate-500 bg-white">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <p>Operação Financeira (Benefícios & Workplace Solutions) &bull; iFood Financial Operations Copilot 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchMainTab(tabName) {
+            const diagSection = document.getElementById('section-diagnostic');
+            const copilotSection = document.getElementById('section-copilot');
+            const btnDiag = document.getElementById('btn-tab-diagnostic');
+            const btnCopilot = document.getElementById('btn-tab-copilot');
+            const subDiag = document.getElementById('subnav-diagnostic');
+            const subCopilot = document.getElementById('subnav-copilot');
+
+            if (tabName === 'copilot') {
+                diagSection.classList.add('hidden');
+                copilotSection.classList.remove('hidden');
+                btnDiag.classList.remove('active');
+                btnCopilot.classList.add('active');
+                subDiag.classList.add('hidden');
+                subCopilot.classList.remove('hidden');
+            } else {
+                copilotSection.classList.add('hidden');
+                diagSection.classList.remove('hidden');
+                btnCopilot.classList.remove('active');
+                btnDiag.classList.add('active');
+                subCopilot.classList.add('hidden');
+                subDiag.classList.remove('hidden');
+            }
+        }
+
+        const copilotAnswers = {
+            'po': `<strong>Saldo Atual PO Flash:</strong> R$ 387.000<br><strong>Consumo Médio:</strong> R$ 102.000/mês<br><strong>Duração Estimada:</strong> 3,8 meses<br><span class="text-emerald-700 font-bold">🟢 Saldo suficiente para os próximos 90 dias sem risco de descontinuidade.</span>`,
+            'workplace': `<strong>Volumetria Média de Workplace Solutions:</strong><br>• <strong>Fiscal:</strong> Média de 70 a 80 NFs/mês (~75/mês)<br>• <strong>Não Fiscal:</strong> Média de 60 a 70 pagamentos/mês (~65/mês)<br>• <strong>Total da Área:</strong> ~140 movimentações mensais consolidadas.`,
+            'rateio': `<strong>Solução Automática para Trava de 99 CCs no SAP:</strong><br>O Copilot fatiou automaticamente o rateio em 2 documentos de lançamento de 80 centros de custo cada, eliminando o erro de rejeição do SAP e dispensando a necessidade do "Pedágio de R$ 1,00".`,
+            'provisionamento': `<strong>Guia Rápido de Provisionamento de Benefícios:</strong><br>1. Acesse o menu de provisão no <strong>Digital By You</strong>.<br>2. Utilize o Centro de Custo unificado da área de Benefícios.<br>3. Insira a Classificação Contábil disponibilizada na Base de Conhecimento do Copilot.<br>4. Confirme o valor projetado para o ciclo sem necessidade de abertura de chamado no Ajuda P2P.`
+        };
+
+        function askCopilot(key) {
+            const chatBox = document.getElementById('chat-messages');
+            const questions = {
+                'po': "Quanto ainda tenho de saldo da PO do Flash?",
+                'workplace': "Qual a média de notas fiscais de Workplace Solutions?",
+                'rateio': "Como contornar a trava dos 99 centros de custo no SAP?",
+                'provisionamento': "Como faço um provisionamento de Benefícios no Digital By You?"
+            };
+
+            const userText = questions[key];
+            const answerText = copilotAnswers[key];
+
+            chatBox.innerHTML += `
+                <div class="bg-ifood-50 p-2.5 rounded-xl border border-ifood-200 text-ifood-900 text-right font-semibold">
+                    👤 ${userText}
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-slate-200 text-slate-800 shadow-sm">
+                    <span class="font-bold text-ifood-600 block mb-1">🤖 Financial Operations Copilot:</span>
+                    ${answerText}
+                </div>
+            `;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function sendCustomQuestion() {
+            const input = document.getElementById('chat-input');
+            const val = input.value.trim();
+            if (!val) return;
+
+            const chatBox = document.getElementById('chat-messages');
+            chatBox.innerHTML += `
+                <div class="bg-ifood-50 p-2.5 rounded-xl border border-ifood-200 text-ifood-900 text-right font-semibold">
+                    👤 ${val}
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-slate-200 text-slate-800 shadow-sm">
+                    <span class="font-bold text-ifood-600 block mb-1">🤖 Financial Operations Copilot:</span>
+                    Consulta processada. A informação foi verificada com sucesso através da integração unificada entre Digital By You, SAP, Portal de Fornecedores e bases de HCM.
+                </div>
+            `;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
